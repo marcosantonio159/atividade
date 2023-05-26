@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="principal">
+        <input type="text" v-model="x">
+        <input type="text" v-model="y">
+        <div>
+            <button v-on:click="Somar">Somar</button>
+            <button v-on:click="Multiplicar">Multiplicar</button>
+            <button v-on:click="Dividir">Dividir</button>
+            <button v-on:click="Subtrair">Subtrair</button>
+        </div>
+        <p>Resultado: {{resultado}} </p>
+        </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = {
+            data(){
+                return{
+                    x: 0,
+                    y: 0,
+                    resultado: 0,
+                };
+            },
+            methods: {
+                Somar() {
+                    this.resultado = parseInt(this.x) + parseInt(this.y);
+                },
+                Multiplicar() {
+                    this.resultado = parseInt(this.x) * parseInt(this.y);
+                },
+                Dividir() {
+                    this.resultado = parseInt(this.x) / parseInt(this.y);
+                },
+                Subtrair() {
+                    this.resultado = parseInt(this.x) - parseInt(this.y);
+                },
+            },
+        };
+        Vue.createApp(app).mount("#principal");
+    </script>
+</body>
+
+</html>
